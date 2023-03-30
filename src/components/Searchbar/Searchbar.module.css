@@ -1,4 +1,4 @@
-/* .searchbar {
+.searchbar {
     top: 0;
     left: 0;
     position: sticky;
@@ -71,4 +71,4 @@
 .searchForm-input::placeholder {
     font: inherit;
     font-size: 18px;
-} */
+}
