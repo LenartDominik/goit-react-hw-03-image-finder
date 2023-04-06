@@ -1,9 +1,21 @@
 import { Grid } from 'react-loader-spinner';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import css from './Loader.module.css';
 
 const Loader = () => {
-  return (
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
+  return isLoading ? (
     <div className={css.loaderWrapper}>
       <Grid
         className={css.loader}
@@ -17,6 +29,7 @@ const Loader = () => {
         visible={true}
       />
     </div>
-  );
+  ) : null;
 };
+
 export default Loader;
